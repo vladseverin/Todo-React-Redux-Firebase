@@ -35,6 +35,7 @@ class ToDoList extends Component {
                 onChange={this.handleInputChange}
                 id="toDoNext"
                 type="text"
+                required
               />
               <label htmlFor="toDoNext">What To Do Next</label>
             </div>
