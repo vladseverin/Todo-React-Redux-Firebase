@@ -5,11 +5,14 @@ import rootReducer from '../reducers';
 
 export default function configureStore() {
   if (process.env.NODE_ENV === 'production') {
-    return createStore(rootReducer);
+    return createStore(
+      rootReducer,
+      applyMiddleware(reduxThunk),
+    )
   } else {
     return createStore(
       rootReducer,
-      applyMiddleware(reduxThunk, loggerMiddleWare)
+      applyMiddleware(reduxThunk, loggerMiddleWare),
     )
   }
 };
